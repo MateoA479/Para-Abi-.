@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso con Contraseña</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #C8A2C8;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    #login, #contenido {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #contenido {
+      display: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Ingresa la contraseña</h2>
+  <input type="password" id="password" placeholder="Contraseña">
+  <button onclick="verificar()">Entrar</button>
+  <p id="mensaje" style="color:red;"></p>
+</div>
+
+<div id="contenido">
+  <h1>Te quiero Abi 💗</h1>
+  <p>Hola Abi, si el mundo te da la espalda, yo también le daré la espalda al mundo. No hay mitad entre nosotros somos los dos, o no es ninguno Te amo.</p>
+  <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy" width="160">
+</div>
+
+<script>
+  const CONTRASEÑA_CORRECTA = "Abi16";
+
+  function verificar() {
+    const input = document.getElementById("password").value;
+    if (input === CONTRASEÑA_CORRECTA) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    } else {
+      document.getElementById("mensaje").textContent = "Contraseña incorrecta.";
+    }
+  }
+</script>
+
+</body>
+</html>
